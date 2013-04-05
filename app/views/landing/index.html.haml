@@ -6,7 +6,5 @@
   %h3 Sign in using any of the services below
 
   .logins
-    = link_to "Facebook" , "/auth/facebook", :class => "btn btn-large btn-primary"
-    = link_to "Twitter" , "/auth/twitter", :class => "btn btn-large btn-info"
-    = link_to "LinkedIn" , "/auth/linkedin", :class => "btn btn-large btn-success"
-    = link_to "Google" , "/auth/google", :class => "btn btn-large btn-warning"
+    - Authorization.providers.each_with_index do |provider,i|
+      = link_to provider.capitalize , "/auth/#{provider.capitalize}", :class => "btn btn-large btn-#{Authorization.colors[i]}"

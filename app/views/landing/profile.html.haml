@@ -1,6 +1,20 @@
+- content_for :sidebar do
+  Name:
+  %br
+  %b= current_user.name
+  %br
+  Email:
+  %br
+  %b= current_user.email
+  = image_tag current_user.image, :class => "thumbnail"
 %b= params[:notice]
-%h4 
-  Your authorizations:
-  %ul
-  - current_user.authorizations.each do |auth|
-    %li= auth.provider
+
+.row-fluid
+  - Authorization.providers.each_with_index do |provider,i|
+    %div(class="span#{(12/Authorization.providers.count)}")
+      - if current_user.connected_with?(provider)
+        = link_to "#{provider.capitalize} is linked", "#", :class => "btn btn-large btn-#{Authorization.colors[i]} disabled"
+      - else
+        = link_to "Add #{provider.capitalize}" , "/auth/#{provider}", :class => "btn btn-large btn-#{Authorization.colors[i]}"
+      .well
+        List of people

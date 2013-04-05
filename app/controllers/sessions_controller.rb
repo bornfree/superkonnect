@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       message = "You signed in using #{auth_hash["provider"].capitalize}."
     end
     redirect_to profile_path, :notice => message
+    #render :json => auth_hash
 
   end
 
