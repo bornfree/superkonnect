@@ -1,0 +1,6 @@
+%b= params[:notice]
+%h4 
+  Your authorizations:
+  %ul
+  - current_user.authorizations.each do |auth|
+    %li= auth.provider

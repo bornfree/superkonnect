@@ -1,0 +1,12 @@
+= content_for :sidebar do
+  %b Or use our own sign in
+
+.well
+
+  %h3 Sign in using any of the services below
+
+  .logins
+    = link_to "Facebook" , "/auth/facebook", :class => "btn btn-large btn-primary"
+    = link_to "Twitter" , "/auth/twitter", :class => "btn btn-large btn-info"
+    = link_to "LinkedIn" , "/auth/linkedin", :class => "btn btn-large btn-success"
+    = link_to "Google" , "/auth/google", :class => "btn btn-large btn-warning"
