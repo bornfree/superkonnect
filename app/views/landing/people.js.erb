@@ -1,0 +1,4 @@
+$(".<%= escape_javascript(params["provider"])%>").html("");
+<% @list_of_people.each do |person| %>
+  $(".<%= escape_javascript(params["provider"])%>").append("<li> <%= escape_javascript(person.name)%></li>");
+<%end%>

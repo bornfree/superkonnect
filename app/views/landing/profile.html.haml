@@ -14,7 +14,8 @@
     %div(class="span#{(12/Authorization.providers.count)}")
       - if current_user.connected_with?(provider)
         = link_to "#{provider.capitalize} is linked", "#", :class => "btn btn-large btn-#{Authorization.colors[i]} disabled"
+        .well
+          = link_to "Get people", people_path(provider), :class => "btn", :remote => true
+          %ul{:class => "#{provider}"}
       - else
         = link_to "Add #{provider.capitalize}" , "/auth/#{provider}", :class => "btn btn-large btn-#{Authorization.colors[i]}"
-      .well
-        List of people

@@ -26,6 +26,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 gem 'omniauth-google'
+gem 'linkedin'
+gem 'fb_graph'
+gem 'twitter'
 
 gem "therubyracer"
 gem "less-rails"

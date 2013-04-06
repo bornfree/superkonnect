@@ -3,6 +3,7 @@ Superkonnect::Application.routes.draw do
   get "landing/index"
   root :to => "landing#index"
   match '/profile' => "landing#profile", :as => :profile
+  match '/people/:provider' => "landing#people", :as => :people
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
