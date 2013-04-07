@@ -7,7 +7,6 @@
     %title= content_for?(:title) ? yield(:title) : "Superkonnect"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
   %body
     .navbar.navbar-inverse
       .navbar-inner
